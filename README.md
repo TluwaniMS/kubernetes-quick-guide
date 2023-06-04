@@ -4,7 +4,7 @@
 
 Kubernetes is a container orchestration engine that is open source, designed to automate the deployment, scaling, and management of applications running in containers.
 
-![Kubernetes Components]()
+![Kubernetes Components](https://github.com/TluwaniMS/kubernetes-quick-guide/blob/master/supporting-images/components-of-kubernetes.svg)
 
 # Kubernetes Components:
 
