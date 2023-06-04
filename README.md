@@ -40,4 +40,22 @@ The kube-controller-manager operates the controller processes.
 
 The cloud-controller-manager in Kubernetes integrates cloud-specific control logic. By utilizing the cloud controller manager, you can establish a connection between your cluster and your cloud provider's API. This approach separates the components that interact with the cloud platform from the components that solely interact with your cluster.
 
+* ### Node (Worker Node):
+
+In Kubernetes, a node refers to a machine that performs work tasks.
+
+######	Node Components:
+
+#### i. Kubelet:
+
+A node-level agent deployed within the cluster, responsible for ensuring the proper execution of containers within a Pod.
+
+#### ii. kube-proxy:
+
+Each node in the cluster hosts kube-proxy, which serves as a network proxy.
+
+#### iiii. Container-runtime:
+
+The container runtime is the software tasked with executing containers.
+
 
