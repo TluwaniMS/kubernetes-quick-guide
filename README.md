@@ -61,3 +61,24 @@ Each node in the cluster hosts kube-proxy, which serves as a network proxy.
 The container runtime is the software tasked with executing containers.
 
 
+# Basic Kubernetes Objects:
+
+### What is a Kubernetes object?
+
+In the Kubernetes system, a Kubernetes object refers to an entity used by the Kubernetes API to depict the state of your cluster. Typically, a Kubernetes object serves as a "record of intent," allowing you to convey your desired configuration for a specific aspect of your cluster's workload. By creating an object, you are essentially informing the Kubernetes system about your cluster's desired state for that particular workload component.
+
+* ### Deployment:
+
+A Kubernetes deployment serves as an API object responsible for overseeing a replicated application, usually achieved by running stateless Pods. Each replica is represented by a Pod, and these Pods are distributed across the cluster's nodes.
+
+* ### Service:
+
+Kubernetes services are employed to expose a network application running within your cluster as one or multiple Pods. A Service typically relies on a selector to determine the specific set of Pods it targets. As Pods are added or removed, the set of Pods matching the selector will dynamically adjust. The purpose of the Service is to ensure that network traffic can be efficiently directed to the current set of Pods handling the workload.
+
+* ### ConfigMap:
+
+A ConfigMap serves as an API entity utilized for storing non-sensitive data in the form of key-value pairs. ConfigMaps can be utilized by pods in various ways, including as environment variables, command-line arguments, or configuration files within a volume.
+
+* ### Kubernetes Secrets:
+
+Secrets serve a similar purpose to ConfigMaps, but their main focus is to securely store sensitive information.
