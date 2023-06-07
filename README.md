@@ -82,3 +82,7 @@ A ConfigMap serves as an API entity utilized for storing non-sensitive data in t
 * ### Kubernetes Secrets:
 
 Secrets serve a similar purpose to ConfigMaps, but their main focus is to securely store sensitive information.
+
+* ### Namespaces:
+
+In Kubernetes, namespaces serve as a means to segregate sets of resources within a cluster, facilitating the sharing of a Kubernetes cluster among various projects, teams, or customers. Resource names must be unique within a namespace but not across different namespaces.
