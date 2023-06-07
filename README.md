@@ -86,3 +86,32 @@ Secrets serve a similar purpose to ConfigMaps, but their main focus is to secure
 * ### Namespaces:
 
 In Kubernetes, namespaces serve as a means to segregate sets of resources within a cluster, facilitating the sharing of a Kubernetes cluster among various projects, teams, or customers. Resource names must be unique within a namespace but not across different namespaces.
+
+
+# Kubectl:
+
+### What is Kubectl?
+
+The Kubernetes command-line tool known as "kubectl" enables you to execute commands on Kubernetes clusters. With kubectl, you can deploy applications, examine and administer cluster resources, and access log information.
+
+# Basic Kubectl commands:
+
+* ### kubectl apply (-f FILENAME | -k DIRECTORY)
+
+You can apply a configuration to a resource either by specifying a file name or providing input via stdin. If the resource doesn't already exist, it will be created during this process.
+
+* ### kubectl get <resource> [Options]
+
+Display one or many resources.
+ 
+* ### kubectl describe (-f FILENAME | TYPE [NAME_PREFIX | -l label] | TYPE/NAME)
+
+Show details of a specific resource or group of resources.
+
+* ### kubectl logs [-f] [-p] (POD | TYPE/NAME) [-c CONTAINER]
+
+If you wish to print the logs for a container within a pod or a specific resource, you have the option to include the container name if the pod contains multiple containers.
+
+* ### kubectl exec (POD | TYPE/NAME) [-c CONTAINER] [flags] -- COMMAND [args...]
+
+Execute a command in a container.
