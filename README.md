@@ -102,17 +102,69 @@ spec:
 
 Kubernetes services are employed to expose a network application running within your cluster as one or multiple Pods. A Service typically relies on a selector to determine the specific set of Pods it targets. As Pods are added or removed, the set of Pods matching the selector will dynamically adjust. The purpose of the Service is to ensure that network traffic can be efficiently directed to the current set of Pods handling the workload.
 
+###### example:
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+```
+
 * ### ConfigMap:
 
 A ConfigMap serves as an API entity utilized for storing non-sensitive data in the form of key-value pairs. ConfigMaps can be utilized by pods in various ways, including as environment variables, command-line arguments, or configuration files within a volume.
+
+###### example:
+
+```
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: game-demo
+data:
+  player_initial_lives: "3"
+  ui_properties_file_name: "user-interface.properties"
+```
 
 * ### Kubernetes Secrets:
 
 Secrets serve a similar purpose to ConfigMaps, but their main focus is to securely store sensitive information.
 
+###### example:
+
+```
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+data:
+  username: YWRtaW4=
+  password: MWYyZDFlMmU2N2Rm
+```
+
 * ### Namespaces:
 
 In Kubernetes, namespaces serve as a means to segregate sets of resources within a cluster, facilitating the sharing of a Kubernetes cluster among various projects, teams, or customers. Resource names must be unique within a namespace but not across different namespaces.
+
+###### example:
+
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+  labels:
+    name: production
+```
 
 
 # Kubectl:
