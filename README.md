@@ -71,6 +71,33 @@ In the Kubernetes system, a Kubernetes object refers to an entity used by the Ku
 
 A Kubernetes deployment serves as an API object responsible for overseeing a replicated application, usually achieved by running stateless Pods. Each replica is represented by a Pod, and these Pods are distributed across the cluster's nodes.
 
+###### example:
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+
+```
+
 * ### Service:
 
 Kubernetes services are employed to expose a network application running within your cluster as one or multiple Pods. A Service typically relies on a selector to determine the specific set of Pods it targets. As Pods are added or removed, the set of Pods matching the selector will dynamically adjust. The purpose of the Service is to ensure that network traffic can be efficiently directed to the current set of Pods handling the workload.
