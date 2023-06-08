@@ -67,6 +67,26 @@ The container runtime is the software tasked with executing containers.
 
 In the Kubernetes system, a Kubernetes object refers to an entity used by the Kubernetes API to depict the state of your cluster. Typically, a Kubernetes object serves as a "record of intent," allowing you to convey your desired configuration for a specific aspect of your cluster's workload. By creating an object, you are essentially informing the Kubernetes system about your cluster's desired state for that particular workload component.
 
+### The .yaml Kubernetes object file must include these mandatory fields.:
+
+#### apiVersion:
+
+The version of the Kubernetes API  you’re utilizing to generate the object.
+
+#### Kind:
+
+The type of object you wish to create.
+
+#### metadata:
+
+The provided information consists of data that serves the purpose of uniquely identifying an object. This includes a string of characters representing a name, a UID (unique identifier), and an optional namespace.
+
+#### spec:
+
+What state you desire for the object.
+
+`NB!` Each Kubernetes object has a unique object spec format that varies and includes nested fields specific to that particular object.
+
 * ### Deployment:
 
 A Kubernetes deployment serves as an API object responsible for overseeing a replicated application, usually achieved by running stateless Pods. Each replica is represented by a Pod, and these Pods are distributed across the cluster's nodes.
