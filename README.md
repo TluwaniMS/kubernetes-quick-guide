@@ -214,3 +214,7 @@ If you wish to print the logs for a container within a pod or a specific resourc
 * ### kubectl exec (POD | TYPE/NAME) [-c CONTAINER] [flags] -- COMMAND [args...]
 
 Execute a command in a container.
+
+# Kubernetes Practice Project:
+
+* [Basic Kubernetes Resource Config](https://github.com/TluwaniMS/kubernetes-objects-yaml-config-guide)
