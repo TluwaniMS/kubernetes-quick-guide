@@ -26,6 +26,8 @@ The Kubernetes control plane includes the API server, which serves as a componen
 
 The etcd serves as a reliable and resilient key-value store, providing consistency and high availability. It functions as the underlying storage system for all cluster data in Kubernetes.
 
+`NB!` Kubernetes components exclusively interact with `etcd` via the kube-api-server.
+
 #### iiii. kube-scheduler:
 
 The Kube-scheduler actively monitors for recently created Pods that haven't been assigned a node yet, and then proceeds to choose a suitable node where these Pods can be executed.
