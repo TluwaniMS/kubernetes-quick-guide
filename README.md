@@ -22,6 +22,16 @@ The control plane serves as the container orchestration layer responsible for pr
 
 The Kubernetes control plane includes the API server, which serves as a component responsible for exposing the Kubernetes API. Serving as the front end for the Kubernetes control plane, the API server plays a crucial role.
 
+###### Responsibilities:
+
+* Serves API
+* Validation
+* Authorization
+* Authentication
+* Admission Control
+* Serialization
+* Reads/Writes on `etcd`
+
 #### ii. etcd:
 
 The etcd serves as a reliable and resilient key-value store, providing consistency and high availability. It functions as the underlying storage system for all cluster data in Kubernetes.
