@@ -42,9 +42,21 @@ The etcd serves as a reliable and resilient key-value store, providing consisten
 
 The Kube-scheduler actively monitors for recently created Pods that haven't been assigned a node yet, and then proceeds to choose a suitable node where these Pods can be executed.
 
+`NB`
+
+###### At any given time, only one scheduler can be active,the scheduler functions based on a leader election system.
+
+`In the process of leader election, a group of candidates vies for the position of leader. Each candidate competes by declaring themselves as the potential leader. Eventually, one candidate emerges as the winner and assumes the role of the leader. After winning the election, the leader regularly sends "heartbeats" to reaffirm their status as the leader, while the other candidates periodically make fresh attempts to become the leader. This approach guarantees a swift identification of a new leader in case the current leader encounters any issues or fails.`
+
 #### iv. Controllers:
 
 Controllers are control loops that monitor the condition of your cluster and subsequently initiate or request modifications as necessary. Each controller endeavors to bring the current state of the cluster closer to the desired state.
+
+`NB`
+
+###### At any given time, only one controller can be active,the controller functions based on a leader election system.
+
+`In the process of leader election, a group of candidates vies for the position of leader. Each candidate competes by declaring themselves as the potential leader. Eventually, one candidate emerges as the winner and assumes the role of the leader. After winning the election, the leader regularly sends "heartbeats" to reaffirm their status as the leader, while the other candidates periodically make fresh attempts to become the leader. This approach guarantees a swift identification of a new leader in case the current leader encounters any issues or fails.`
 
 #### v. kube-controller-manager:
 
